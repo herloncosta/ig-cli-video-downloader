@@ -25,6 +25,7 @@ ig-cli-video-downloader/
 O projeto faz uso das seguintes dependências principais e bibliotecas Node.js para o seu funcionamento:
 
 - **[youtube-dl-exec](https://www.npmjs.com/package/youtube-dl-exec)**: Realiza o download dos vídeos usando o `yt-dlp`. Ele extrai e funde as streams de vídeo/áudio do Instagram em um arquivo com a melhor qualidade disponível (`bestvideo+bestaudio`).
+- **[pino](https://www.npmjs.com/package/pino)** e **[pino-pretty](https://www.npmjs.com/package/pino-pretty)**: Utilizados para a geração de logs estruturados e formatados no terminal, substituindo o uso padrão do `console.log`.
 
 ## Como Clonar e Executar
 
@@ -33,20 +34,20 @@ Siga as instruções abaixo para configurar e utilizar a ferramenta no seu ambie
 ### Pré-requisitos
 Certifique-se de ter o **[Node.js](https://nodejs.org/)** instalado.
 
-### 1. Clonando o Repositório
+### Clonando o Repositório
 Abra o seu terminal e clone o projeto através do link fornecido:
 ```bash
 git clone https://github.com/herloncosta/ig-cli-video-downloader.git
 cd ig-cli-video-downloader
 ```
 
-### 2. Instalando Dependências
+### Instalando Dependências
 Dentro da pasta do projeto, instale as bibliotecas necessárias:
 ```bash
 npm install
 ```
 
-### 3. Baixando um Vídeo
+### Baixando um Vídeo
 Para iniciar o download de um vídeo do Instagram, basta executar o seguinte comando, passando a URL do vídeo/Reels como argumento:
 ```bash
 npm start "https://www.instagram.com/reel/ID_DO_VIDEO/"
@@ -55,7 +56,7 @@ npm start "https://www.instagram.com/reel/ID_DO_VIDEO/"
 
 O utilitário processará o link e o arquivo `.mp4` gerado será salvo na pasta `downloads/` com um nome único temporal.
 
-### 4. Limpando Diretório
+### Limpando Diretório
 Foi criado também um script para limpar os vídeos antigos salvos na pasta local, você pode executá-lo a qualquer momento:
 ```bash
 npm run clear

@@ -1,6 +1,7 @@
 import ytdl from "youtube-dl-exec";
 import path from "node:path";
 import fs from "node:fs";
+import { logger } from "./logger.js";
 
 export async function downloadIGVideo(url) {
 	const downloadsDir = path.resolve(process.cwd(), "downloads");
@@ -12,8 +13,8 @@ export async function downloadIGVideo(url) {
 	const fileName = `video_${Date.now()}.mp4`;
 	const outputPath = path.resolve(downloadsDir, fileName);
 
-	console.log(`Baixando vídeo de: ${url}`);
-	console.log("Iniciando extração e fusão de streams...");
+	logger.info(`Baixando vídeo de: ${url}`);
+	logger.info("Iniciando extração e fusão de streams...");
 
 	try {
 		await ytdl(url, {
@@ -22,8 +23,8 @@ export async function downloadIGVideo(url) {
 			mergeOutputFormat: "mp4",
 		});
 
-		console.log(`Vídeo completo e reproduzível salvo em: ${outputPath}`);
+		logger.info(`Vídeo completo e reproduzível salvo em: ${outputPath}`);
 	} catch (error) {
-		console.error("Erro no processamento:", error.message);
+		logger.error({ error }, "Erro no processamento");
 	}
 }
