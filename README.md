@@ -16,6 +16,7 @@ ig-cli-video-downloader/
 │   └── lib/                    # Módulos utilitários e lógica principal
 │       ├── clear-downloads.js  # Script para apagar o conteúdo do diretório de downloads
 │       └── downloader.js       # Lógica responsável por extrair e realizar os downloads do vídeo
+│       └── logger.js           # Configuração do logger
 ├── package.json                # Configurações, dependências e scripts do projeto (Node.js)
 └── README.md                   # Documentação do projeto
 ```
