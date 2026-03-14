@@ -1,0 +1,17 @@
+{
+  "name": "ig-downloader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "clear": "node src/lib/clear-downloads.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "youtube-dl-exec": "^3.1.3"
+  }
+}
